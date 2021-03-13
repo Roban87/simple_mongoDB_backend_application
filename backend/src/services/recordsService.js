@@ -22,6 +22,10 @@ export const recordsService = {
       throw { status: 400, message: 'Id is missing!' };
     }
 
+    if (typeof _id !== 'string') {
+      throw { status: 400, message: 'Id must be a string!' };
+    }
+
     const book = await recordsRepo.getBookById(_id);
     if (book.length > 0) {
       throw { status: 400, message: 'Id already exists' };
