@@ -8,7 +8,8 @@
     "test": "jest --watchAll",
     "start": "nodemon --exec babel-node -r ./node_modules/dotenv/config src/index.js",
     "build": "babel src -d dist",
-    "server": "node -r dotenv/config dist/index.js"
+    "server": "node -r dotenv/config dist/index.js",
+    "starterdb": "babel-node -r ./node_modules/dotenv/config src/dbStarterData.js "
   },
   "dependencies": {
     "cors": "^2.8.5",
