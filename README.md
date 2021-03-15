@@ -39,9 +39,9 @@
 
 ## User Guide
 1. use a Postman or any other way to create your requests
-2. to get all records: make a GET request on the /api/records endpoint
-3. to get one record: make a GET request on the /api/records/:id endpoint
+2. to get all records: make a GET request on the '/api/records' endpoint
+3. to get one record: make a GET request on the '/api/records/:id' endpoint
    - sample data contains ids from 1 to 10
-4. to add a new record: make a POST request on the /api/records endpoint
+4. to add a new record: make a POST request on the '/api/records' endpoint
    - the body should contain a JSON object with one _id data, that has to be a string, any other data is optional
-5. to delete one record: make a DELETE request on the /api/records/:id endpoint
+5. to delete one record: make a DELETE request on the '/api/records/:id' endpoint
