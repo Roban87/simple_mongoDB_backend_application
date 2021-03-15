@@ -8,9 +8,9 @@ const router = express.Router();
 router.use(cors());
 router.use(express.json());
 
-router.get('/records', recordsController.getAllBooks);
-router.get('/records/:id', recordsController.getBookById);
-router.post('/records', recordsController.postBook);
-router.delete('/records/:id', recordsController.deleteBookById);
+router.get('/records', recordsController.getAllRecords);
+router.get('/records/:id', recordsController.getRecordById);
+router.post('/records', recordsController.postRecord);
+router.delete('/records/:id', recordsController.deleteRecordById);
 
 export default router;

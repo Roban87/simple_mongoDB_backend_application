@@ -2,20 +2,20 @@ import { recordsRepo } from '../repositories';
 
 export const recordsService = {
 
-  getAllBooks: async () => {
-    const books = await recordsRepo.getAllBooks();
-    return books;
+  getAllRecords: async () => {
+    const records = await recordsRepo.getAllRecords();
+    return records;
   },
 
-  getBookById: async (id) => {
-    const book = await recordsRepo.getBookById(id);
-    if (book.length === 0) {
-      throw { status: 400, message: 'Book doesn\'t exists!' };
+  getRecordById: async (id) => {
+    const record = await recordsRepo.getRecordById(id);
+    if (record.length === 0) {
+      throw { status: 400, message: 'Record doesn\'t exists!' };
     }
-    return book[0];
+    return record[0];
   },
 
-  postBook: async (data) => {
+  postRecord: async (data) => {
     const { _id } = data;
 
     if (_id === undefined) {
@@ -26,22 +26,22 @@ export const recordsService = {
       throw { status: 400, message: 'Id must be a string!' };
     }
 
-    const book = await recordsRepo.getBookById(_id);
-    if (book.length > 0) {
+    const record = await recordsRepo.getRecordById(_id);
+    if (record.length > 0) {
       throw { status: 400, message: 'Id already exists' };
     }
 
-    const newBook = await recordsRepo.postBook(data);
-    return newBook.ops[0];
+    const newrecord = await recordsRepo.postRecord(data);
+    return newrecord.ops[0];
   },
 
-  deleteBookById: async (id) => {
-    const book = await recordsRepo.getBookById(id);
-    if (book.length === 0) {
-      throw { status: 400, message: 'Book doesn\'t exists!' };
+  deleteRecordById: async (id) => {
+    const record = await recordsRepo.getRecordById(id);
+    if (record.length === 0) {
+      throw { status: 400, message: 'Record doesn\'t exists!' };
     }
 
-    await recordsRepo.deleteBookById(id);
-    return book[0];
+    await recordsRepo.deleteRecordById(id);
+    return record[0];
   },
 };

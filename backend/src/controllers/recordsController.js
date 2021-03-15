@@ -2,40 +2,40 @@ import { recordsService } from '../services';
 
 export const recordsController = {
 
-  getAllBooks: async (req, res, next) => {
+  getAllRecords: async (req, res, next) => {
     try {
-      const booksResults = await recordsService.getAllBooks();
-      res.status(200).json({ booksResults });
+      const recordsResults = await recordsService.getAllRecords();
+      res.status(200).json({ recordsResults });
     } catch (error) {
       next(error);
     }
   },
 
-  getBookById: async (req, res, next) => {
+  getRecordById: async (req, res, next) => {
     const { id } = req.params;
     try {
-      const bookResult = await recordsService.getBookById(id);
-      res.status(200).json({ bookResult });
+      const recordResult = await recordsService.getRecordById(id);
+      res.status(200).json({ recordResult });
     } catch (error) {
       next(error);
     }
   },
 
-  postBook: async (req, res, next) => {
+  postRecord: async (req, res, next) => {
     const data = req.body;
     try {
-      const insertResult = await recordsService.postBook(data);
-      res.status(201).json({ insertResult });
+      const insertResult = await recordsService.postRecord(data);
+      res.status(201).json(insertResult);
     } catch (error) {
       next(error);
     }
   },
 
-  deleteBookById: async (req, res, next) => {
+  deleteRecordById: async (req, res, next) => {
     const { id } = req.params;
     try {
-      const deletedBook = await recordsService.deleteBookById(id);
-      res.status(200).json({ deletedBook });
+      const deletedRecord = await recordsService.deleteRecordById(id);
+      res.status(200).json(deletedRecord);
     } catch (error) {
       next(error);
     }

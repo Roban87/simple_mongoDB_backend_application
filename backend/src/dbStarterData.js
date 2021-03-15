@@ -66,8 +66,7 @@ const starterData = [
 const populateDb = async () => {
   try {
     await client.connect();
-    const result = client.db('gamma_digital').collection('books').insertMany(starterData);
-    return result;
+    await client.db('gamma_digital').collection('records').insertMany(starterData);
   } catch (error) {
     throw { status: 500, message: error };
   }
@@ -80,7 +79,6 @@ populateDb()
   })
   .catch((err) => {
     console.log(err);
-
     console.log('Couldn`t fill the database!');
     process.exit(1);
   });
