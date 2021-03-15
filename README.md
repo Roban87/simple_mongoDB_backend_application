@@ -18,7 +18,7 @@
 5. create .env file with the informations below
     - if you don't have MongoDB Atlas registration, please make one: https://www.mongodb.com/ and create a cluster
     - on the cluster choose CONNECT -> Connect your application
-    - there you can find your data: mongodb+srv://<user>:<password>@<host>/?someOptions
+    - there you can find your data: mongodb+srv://< username>:< password>@< host>/?someOptions
     - give a port and database name of your choise
     ```
     PORT=
