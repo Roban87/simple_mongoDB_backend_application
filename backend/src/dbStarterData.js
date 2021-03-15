@@ -1,4 +1,5 @@
 import { client } from './data/connection';
+import config from './config';
 
 const starterData = [
   {
@@ -66,7 +67,7 @@ const starterData = [
 const populateDb = async () => {
   try {
     await client.connect();
-    await client.db('gamma_digital').collection('records').insertMany(starterData);
+    await client.db(config.mongodb.database).collection('records').insertMany(starterData);
   } catch (error) {
     throw { status: 500, message: error };
   }
