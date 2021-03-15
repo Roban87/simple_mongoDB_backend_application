@@ -28,7 +28,7 @@
     MONGODB_DATABASE=
     ```
     (examples can be found in the .env.example)
-6. to create db with starter data run script
+6. to create database with starter data run script
     ```
     yarn starterdb
     ```
