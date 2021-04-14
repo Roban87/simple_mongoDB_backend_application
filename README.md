@@ -1,4 +1,4 @@
-### Gamma Digital trial task
+### basic MongoDB application with CRUD functions
 
 ## Installing and Runnig the application
 
